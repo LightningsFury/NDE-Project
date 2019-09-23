@@ -8,7 +8,9 @@ export class GameArea extends Component<GameAreaProps> {
   render() {
     return (
         <React.Fragment>
-            <p>{this.props.description}</p>
+            <h1>{this.props.description}</h1>
+            <hr />
+            {this.props.children}
         </React.Fragment>
     );
   }

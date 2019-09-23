@@ -23,7 +23,9 @@ class App extends Component<{}, AppState> {
   render() {
     return (
       <React.Fragment>
-          <GameArea description={'test'} />
+          <GameArea description={'test'}>
+            <p>{'aaa'}</p>
+          </GameArea>
           <InputForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />
       </React.Fragment>
     );

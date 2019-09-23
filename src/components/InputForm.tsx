@@ -11,7 +11,7 @@ export class InputForm extends Component<InputFormProps, InputFormState> {
     constructor(props: InputFormProps) {
         super(props);
     }
-    private state: InputFormState = {
+    public state: InputFormState = {
         value: ''
     };
     public submit: React.FormEventHandler<HTMLFontElement> = (e: React.FormEvent<HTMLInputElement>) => {

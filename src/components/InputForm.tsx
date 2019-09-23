@@ -13,7 +13,7 @@ export class InputForm extends Component<InputFormProps, InputFormState> {
     render() {
         return (<div>
             <form onSubmit={this.props.handleSubmit}>
-                <input type={'text'} onChange={this.handleChange} value={this.props.value} />
+                <input type={'text'} onChange={this.props.handleChange} value={this.props.value} />
                 <input type={'submit'} />
             </form>
         </div>)

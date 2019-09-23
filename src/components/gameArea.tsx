@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
-export class gameArea extends Component {
+export interface GameAreaProps {
+  description: string;
+}
+
+export class GameArea extends Component<GameAreaProps> {
   render() {
     return (
         <React.Fragment>

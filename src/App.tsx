@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {GameArea} from './components/GameArea'
+import {GameArea} from './components/GameArea';
+import {InputForm} from './components/InputForm';
 import './App.css';
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <GameArea description={'test'} />
+          <InputForm />
         </header>      
       </div>
     );

@@ -3,13 +3,29 @@ import {GameArea} from './components/GameArea';
 import {InputForm} from './components/InputForm';
 import './App.css';
 
-class App extends Component {
+interface AppState {
+  value: string;
+}
+
+class App extends Component<{}, AppState> {
+  constructor(props: {}) {
+    super(props);
+  };
+  public state: AppState = {
+    value: ''
+  };
+  public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({value: e.target.value + ' '})
+  };
+  public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  }; 
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <GameArea description={'test'} />
-          <InputForm />
+          <InputForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />
         </header>      
       </div>
     );

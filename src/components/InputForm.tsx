@@ -14,9 +14,10 @@ export class InputForm extends Component<InputFormProps, InputFormState> {
     public state: InputFormState = {
         value: ''
     };
-    public submit: React.FormEventHandler<HTMLFontElement> = (e: React.FormEvent<HTMLInputElement>) => {
+    public submit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     };
+    public onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {}
     render() {
         return (<div>
             <form onSubmit={this.submit}>

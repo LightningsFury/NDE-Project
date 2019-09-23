@@ -15,10 +15,11 @@ class App extends Component<{}, AppState> {
     value: ''
   };
   public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({value: e.target.value + ' '})
+    this.setState({value: e.target.value + ' it\'s time to stop '})
   };
   public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    this.setState({value: ''})
   }; 
   render() {
     return (

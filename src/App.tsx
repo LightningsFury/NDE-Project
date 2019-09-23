@@ -22,12 +22,10 @@ class App extends Component<{}, AppState> {
   }; 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <React.Fragment>
           <GameArea description={'test'} />
           <InputForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />
-        </header>      
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -28,4 +28,4 @@ export class InputForm extends Component<InputFormProps, InputFormState> {
             </form>
         </div>)
     }
-}\
+};

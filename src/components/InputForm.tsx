@@ -14,10 +14,10 @@ export class InputForm extends Component<InputFormProps, InputFormState> {
     public state: InputFormState = {
         value: ''
     };
-    readonly public handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
+    public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     };
-    readonly public handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
+    public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({value: e.target.value + ' '})
     }
     render() {
@@ -28,4 +28,4 @@ export class InputForm extends Component<InputFormProps, InputFormState> {
             </form>
         </div>)
     }
-}
+}\

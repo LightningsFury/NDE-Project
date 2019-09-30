@@ -10,6 +10,7 @@ export interface LoginAreaState {
     authenticated: boolean;
     username: string;
     password: string;
+    description: string;
 }
 
 export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
@@ -17,6 +18,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
         authenticated: false,
         username: '',
         password: '',
+        description: ''
     }
     constructor(props: LoginAreaProps) {
         super(props)
@@ -24,8 +26,15 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
     public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = 
         (e: React.FormEvent<HTMLFormElement> ) => {
             e.preventDefault();
+            if (!authenticate(this.state)) {
+                this.setState({
+                    username: '',
+                    password: '',
+                    description: 'Invalid login details! Try Again.'
+                })
+                return;
+            }
             this.setState({authenticated: true})
-            console.log(authenticate(this.state))
         }
     public readonly handleUsernameOnChange: React.ChangeEventHandler<HTMLInputElement> = 
         (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +65,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                         placeholder={'password'} />
                     <input type={'submit'} />
                 </form> 
+                <p style={{color: 'red'}}>{this.state.description}</p>
             </React.Fragment>)
     }
 }

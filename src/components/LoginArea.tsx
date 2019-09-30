@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import App from '../App'
+import { authenticate } from '../util/authenticateUser'
 
 export interface LoginAreaProps {
 
@@ -24,7 +25,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
         (e: React.FormEvent<HTMLFormElement> ) => {
             e.preventDefault();
             this.setState({authenticated: true})
-            console.log(this.state)
+            authenticate(this.state)
         }
     public readonly handleUsernameOnChange: React.ChangeEventHandler<HTMLInputElement> = 
         (e: React.ChangeEvent<HTMLInputElement>) => {

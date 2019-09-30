@@ -26,6 +26,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
     public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = 
         (e: React.FormEvent<HTMLFormElement> ) => {
             e.preventDefault();
+            if (this.state.username === '' || this.state.password === '') return this.setState({description: 'Username/Password cannot be empty.'})
             if (!authenticate(this.state)) {
                 this.setState({
                     username: '',
@@ -58,7 +59,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                         value={this.state.username}
                         placeholder={'enter your username'} />
                     <input 
-                        type={'text'} 
+                        type={'password'} 
                         name={'password'} 
                         onChange={this.handlePasswordOnChange}
                         value={this.state.password}

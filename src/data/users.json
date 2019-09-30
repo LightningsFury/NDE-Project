@@ -1,8 +1,12 @@
 {
     "users": [
         {
-            "username": "",
-            "password": ""
+            "username": "a",
+            "password": "YQ=="
+        },
+        {
+            "username": "nuradin",
+            "password": "bWFsYXJpYQ=="
         }
     ]
 }

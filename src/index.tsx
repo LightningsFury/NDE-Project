@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {LoginArea} from './components/LoginArea'
 import * as serviceWorker from './serviceWorker';
 
 const Main: React.FunctionComponent = () => (      
     <div className="App">
         <header className="App-header">
-            <App />
+            <LoginArea />
         </header>
     </div>
     )

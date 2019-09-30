@@ -25,7 +25,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
         (e: React.FormEvent<HTMLFormElement> ) => {
             e.preventDefault();
             this.setState({authenticated: true})
-            authenticate(this.state)
+            console.log(authenticate(this.state))
         }
     public readonly handleUsernameOnChange: React.ChangeEventHandler<HTMLInputElement> = 
         (e: React.ChangeEvent<HTMLInputElement>) => {

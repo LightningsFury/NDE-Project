@@ -12,7 +12,9 @@ export interface LoginAreaState {
 
 export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
     public state: LoginAreaState = {
-        authenticated: false
+        authenticated: false,
+        username: '',
+        password: '',
     }
     constructor(props: LoginAreaProps) {
         super(props)

@@ -35,8 +35,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
             })
         }
     render() {
-        return 
-            (<div>
+        return (<div>
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type={'text'} 

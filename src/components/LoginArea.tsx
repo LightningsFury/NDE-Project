@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import App from '../App'
 
 export interface LoginAreaProps {
 
@@ -22,7 +23,8 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
     public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = 
         (e: React.FormEvent<HTMLFormElement> ) => {
             e.preventDefault();
-            alert(this.state)
+            this.setState({authenticated: true})
+            console.log(this.state)
         }
     public readonly handleUsernameOnChange: React.ChangeEventHandler<HTMLInputElement> = 
         (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,20 +39,22 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
             })
         }
     render() {
-        return (<div>
+        return this.state.authenticated ? <App /> : (<React.Fragment >
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type={'text'} 
                         name={'username'} 
                         onChange={this.handleUsernameOnChange} 
+                        value={this.state.username}
                         placeholder={'enter your username'} />
                     <input 
                         type={'text'} 
                         name={'password'} 
                         onChange={this.handlePasswordOnChange}
+                        value={this.state.password}
                         placeholder={'password'} />
                     <input type={'submit'} />
-                </form> 
+                </React.Fragment> 
             </div>)
     }
 }

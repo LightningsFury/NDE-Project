@@ -9,5 +9,9 @@ export interface LoginAreaState {
 }
 
 export class LoginArea extends Component {
-    render() {}
+    render() {
+        return (<div>
+            
+        </div>)
+    }
 }

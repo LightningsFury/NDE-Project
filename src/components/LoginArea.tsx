@@ -54,7 +54,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                         value={this.state.password}
                         placeholder={'password'} />
                     <input type={'submit'} />
-                </React.Fragment> 
-            </div>)
+                </form> 
+            </React.Fragment>)
     }
 }

@@ -31,7 +31,7 @@ class App extends Component<{}, AppState> {
   private getRandomSong = () => {
     const len = songs.length;
     console.log(songs);
-    return songs[len * Math.random()]
+    return songs[Math.floor(len * Math.random())]
   }
   render() {
     return (

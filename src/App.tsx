@@ -4,7 +4,7 @@ import {InputForm} from './components/InputForm';
 import './App.css';
 import {songs} from './data/songs.json';
 
-interface AppState {
+export interface AppState {
   value: string;
 }
 
@@ -22,11 +22,20 @@ class App extends Component<{}, AppState> {
     e.preventDefault();
     this.setState({value: ''})
   }; 
-  private generate
+  private generateSongInitials = (songName: string) => {
+    const words = songName.split(/\s/gi);
+    const initials = words.map((v: string) => v.charAt(0));
+    console.log(initials)
+    return initials.join(' ').toUpperCase();
+  }
+  private getRandomSong = () => {
+    const len = songs.length;
+    return songs[len * Math.random()]
+  }
   render() {
     return (
       <React.Fragment>
-          <GameArea description={'test'}>
+          <GameArea description={this.generateSongInitials(getRandomSong().name)}>
             <p>{'aaa'}</p>
           </GameArea>
           <InputForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />

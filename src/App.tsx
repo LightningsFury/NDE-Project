@@ -14,6 +14,10 @@ class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
   };
+  private getRandomSong = (): song => {
+    const len: number = songs.length;
+    return songs[Math.floor(len * Math.random())]
+  }
   public state: AppState = {
     value: '',
     currentSong: this.getRandomSong()
@@ -30,10 +34,7 @@ class App extends Component<{}, AppState> {
     const initials = words.map((v: string) => v.charAt(0));
     return initials.join(' ').toUpperCase();
   }
-  private  getRandomSong = (): song => {
-    const len: number = songs.length;
-    return songs[Math.floor(len * Math.random())]
-  }
+
   render() {
     return (
       <React.Fragment>

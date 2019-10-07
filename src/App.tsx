@@ -5,6 +5,7 @@ import './App.css';
 import {songs} from './data/songs.json';
 import {song} from './interfaces/song'
 import {GameStatus} from './components/GameStatus'
+import {Leaderboard} from './components/Leaderboard'
 
 export interface AppState {
   value: string;
@@ -38,6 +39,9 @@ class App extends Component<{}, AppState> {
     e.preventDefault();
     const name = this.state.currentSong.name.toLowerCase();
     if (this.state.value.toLowerCase() !== name) {
+      if (this.state.secondTry) return this.setState({
+        lost: true
+      })
       this.setState({
         value: '',
         secondTry: true, 
@@ -60,7 +64,7 @@ class App extends Component<{}, AppState> {
   }
 
   render() {
-    return (
+    return this.state.lost ? <Leaderboard /> : (
       <React.Fragment>
           <GameArea description={this.generateSongInitials(this.state.currentSong)}>
             <p>{this.state.currentSong.artist}</p>

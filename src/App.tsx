@@ -11,6 +11,8 @@ export interface AppState {
   currentSong: song;
   status: string;
   secondTry: boolean;
+  lost: boolean;
+  score: number;
 }
 
 class App extends Component<{}, AppState> {
@@ -25,7 +27,9 @@ class App extends Component<{}, AppState> {
     value: '',
     currentSong: this.getRandomSong(),
     secondTry: false,
-    status: ''
+    status: '',
+    lost: false,
+    score: 0
   };
   public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({value: e.target.value})
@@ -40,8 +44,14 @@ class App extends Component<{}, AppState> {
         status: 'Incorrect! Try Again...'
       })
       return;
+    } else {
+      this.setState({
+        value: '',
+        status: 'Correct! Next Try... \n Your score is '+(this.state.score + 1),
+        score: this.state.score + 1,
+        currentSong: this.getRandomSong()
+      })
     }
-    this.setState({value: ''})
   }; 
   private generateSongInitials = ({name}: song) => {
     const words = name.split(/\s/gi);

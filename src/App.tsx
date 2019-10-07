@@ -13,16 +13,10 @@ export interface AppState {
 class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
-    this.setState({
-      currentSong: this.getRandomSong()
-    })
   };
   public state: AppState = {
     value: '',
-    currentSong: {
-      name: '',
-      artist: ''
-    }
+    currentSong: this.getRandomSong()
   };
   public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({value: e.target.value})

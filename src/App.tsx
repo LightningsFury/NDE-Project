@@ -64,7 +64,7 @@ class App extends Component<{}, AppState> {
   }
 
   render() {
-    return this.state.lost ? <Leaderboard /> : (
+    return this.state.lost ? <Leaderboard score={this.state.score}/> : (
       <React.Fragment>
           <GameArea description={this.generateSongInitials(this.state.currentSong)}>
             <p>{this.state.currentSong.artist}</p>

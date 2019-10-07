@@ -3,14 +3,19 @@ import {GameArea} from './components/GameArea';
 import {InputForm} from './components/InputForm';
 import './App.css';
 import {songs} from './data/songs.json';
+import {song} from './interfaces/song'
 
 export interface AppState {
   value: string;
+  currentSong: song;
 }
 
 class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
+    this.setState({
+      currentSong: this.getRandomSong()
+    })
   };
   public state: AppState = {
     value: ''
@@ -22,22 +27,20 @@ class App extends Component<{}, AppState> {
     e.preventDefault();
     this.setState({value: ''})
   }; 
-  private generateSongInitials = (songName: string) => {
-    const words = songName.split(/\s/gi);
+  private generateSongInitials = ({name}: song) => {
+    const words = name.split(/\s/gi);
     const initials = words.map((v: string) => v.charAt(0));
-    console.log(initials)
     return initials.join(' ').toUpperCase();
   }
-  private getRandomSong = () => {
-    const len = songs.length;
-    console.log(songs);
+  private getRandomSong = (): song => {
+    const len: number = songs.length;
     return songs[Math.floor(len * Math.random())]
   }
   render() {
     return (
       <React.Fragment>
-          <GameArea description={this.generateSongInitials(this.getRandomSong().name)}>
-            <p>{'aaa'}</p>
+          <GameArea description={this.generateSongInitials(this.state.currentSong)}>
+            <p>{this.state.currentSong.artist}</p>
           </GameArea>
           <InputForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />
       </React.Fragment>

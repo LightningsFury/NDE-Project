@@ -1,0 +1,20 @@
+{
+    "songs": [
+        {
+            "name": "Truth Hurts",
+            "artist": "Lizzo"
+        },
+        {
+            "name": "Senorita",
+            "artist":"Shawn Mendes & Camilla Cabelo"
+        },
+        {
+            "name": "No Guidance",
+            "artist": "Chris Brown featuring Drake"
+        },
+        {
+            "name":"Bad Guy",
+            "artist": "Billie Eilish"
+        }
+    ]
+}

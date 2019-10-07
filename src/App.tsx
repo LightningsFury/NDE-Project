@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {GameArea} from './components/GameArea';
 import {InputForm} from './components/InputForm';
 import './App.css';
+import {songs} from './data/songs.json';
 
 interface AppState {
   value: string;
@@ -15,12 +16,13 @@ class App extends Component<{}, AppState> {
     value: ''
   };
   public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({value: e.target.value + ' it\'s time to stop '})
+    this.setState({value: e.target.value})
   };
   public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     this.setState({value: ''})
   }; 
+  private generate
   render() {
     return (
       <React.Fragment>

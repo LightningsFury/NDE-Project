@@ -27,7 +27,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
         (e: React.FormEvent<HTMLFormElement> ) => {
             e.preventDefault();
             if (this.state.username === '' || this.state.password === '') return this.setState({description: 'Username/Password cannot be empty.'})
-            if (this.state.username.match(/^[0-9a-zA-Z]+$/)) return this.setState({
+            if (!this.state.username.match(/^[0-9a-zA-Z]+$/)) return this.setState({
                 username: '',
                 description: 'Your username contains a strange character.'
             })

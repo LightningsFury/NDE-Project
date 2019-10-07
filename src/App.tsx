@@ -7,7 +7,7 @@ import {song} from './interfaces/song'
 
 export interface AppState {
   value: string;
-  currentSong?: song;
+  currentSong: song;
 }
 
 class App extends Component<{}, AppState> {
@@ -18,7 +18,11 @@ class App extends Component<{}, AppState> {
     })
   };
   public state: AppState = {
-    value: ''
+    value: '',
+    currentSong: {
+      name: '',
+      artist: ''
+    }
   };
   public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({value: e.target.value})

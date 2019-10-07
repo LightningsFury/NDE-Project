@@ -7,7 +7,7 @@ import {song} from './interfaces/song'
 
 export interface AppState {
   value: string;
-  currentSong: song;
+  currentSong?: song;
 }
 
 class App extends Component<{}, AppState> {
@@ -32,7 +32,7 @@ class App extends Component<{}, AppState> {
     const initials = words.map((v: string) => v.charAt(0));
     return initials.join(' ').toUpperCase();
   }
-  private getRandomSong = (): song => {
+  private  getRandomSong = (): song => {
     const len: number = songs.length;
     return songs[Math.floor(len * Math.random())]
   }

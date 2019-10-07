@@ -35,7 +35,7 @@ class App extends Component<{}, AppState> {
   render() {
     return (
       <React.Fragment>
-          <GameArea description={this.generateSongInitials(getRandomSong().name)}>
+          <GameArea description={this.generateSongInitials(this.getRandomSong().name)}>
             <p>{'aaa'}</p>
           </GameArea>
           <InputForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />

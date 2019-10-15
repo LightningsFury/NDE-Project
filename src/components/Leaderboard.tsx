@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { UsernameContext } from "../context/username";
 
-export interface LeaderboardProps {
-    score: number;
-}
+export interface LeaderBoardProps {}
+export interface LeaderBoardState {}
 
-export interface LeaderboardState {
-
-}
-
-export class Leaderboard extends Component<LeaderboardProps, LeaderboardState> {
-    render() {
-        return (
-            <div>
-                <h1>You lost!</h1>
-                <p>Your score {this.props.score}</p>
-            </div>
-        )
-    }
+export class LeaderBoard extends Component<LeaderBoardProps, LeaderBoardState> {
+  render() {
+    return (
+      <div>
+        <UsernameContext.Consumer>
+          {username => {
+            return <p>Your name is {username}</p>;
+          }}
+        </UsernameContext.Consumer>
+      </div>
+    );
+  }
 }

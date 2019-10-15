@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import App from '../App'
 import { authenticate } from '../util/authenticateUser'
+import { UsernameContext } from '../context/username'
 
 export interface LoginAreaProps {
 
@@ -54,7 +55,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
             })
         }
     render() {
-        return this.state.authenticated ? <App /> : (<React.Fragment >
+        return this.state.authenticated ? <UsernameContext.Provider value={this.state.username}><App /></UsernameContext.Provider> : (<React.Fragment >
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type={'text'} 

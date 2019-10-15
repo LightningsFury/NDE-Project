@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import {GameArea} from './components/GameArea';
-import {InputForm} from './components/InputForm';
-import './App.css';
-import {songs} from './data/songs.json';
-import {song} from './interfaces/song'
-import {GameStatus} from './components/GameStatus'
-import {Leaderboard} from './components/Leaderboard'
+import React, { Component } from "react";
+import { GameArea } from "./components/GameArea";
+import { InputForm } from "./components/InputForm";
+import "./App.css";
+import { songs } from "./data/songs.json";
+import { song } from "./interfaces/song";
+import { GameStatus } from "./components/GameStatus";
+import { LosingScreen } from "./components/LosingScreen";
 
 export interface AppState {
   value: string;
@@ -19,58 +19,74 @@ export interface AppState {
 class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
-  };
+  }
   private getRandomSong = (): song => {
     const len: number = songs.length;
-    return songs[Math.floor(len * Math.random())]
-  }
+    return songs[Math.floor(len * Math.random())];
+  };
   public state: AppState = {
-    value: '',
+    value: "",
     currentSong: this.getRandomSong(),
     secondTry: false,
-    status: '',
+    status: "",
     lost: false,
     score: 0
   };
-  public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({value: e.target.value})
+  public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    this.setState({ value: e.target.value });
   };
-  public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
+  public readonly handleSubmit: React.FormEventHandler<HTMLFormElement> = (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
+    if (this.state.value.length <= 0) return this.setState({status: 'Value can\'t be empty!'})
     const name = this.state.currentSong.name.toLowerCase();
     if (this.state.value.toLowerCase() !== name) {
-      if (this.state.secondTry) return this.setState({
-        lost: true
-      })
+      if (this.state.secondTry)
+        return this.setState({
+          lost: true
+        });
       this.setState({
-        value: '',
-        secondTry: true, 
-        status: 'Incorrect! Try Again...'
-      })
+        value: "",
+        secondTry: true,
+        status: "Incorrect! Try Again..."
+      });
       return;
     } else {
       this.setState({
-        value: '',
-        status: 'Correct! Next Try... \n Your score is '+(this.state.score + 1),
+        value: "",
+        status:
+          "Correct! Next Try... \n Your score is " + (this.state.score + 1),
         score: this.state.score + 1,
+        secondTry: false, // reset the value back to false, whether or not it was true before
         currentSong: this.getRandomSong()
-      })
+      });
     }
-  }; 
-  private generateSongInitials = ({name}: song) => {
+  };
+  private generateSongInitials = ({ name }: song) => {
     const words = name.split(/\s/gi);
     const initials = words.map((v: string) => v.charAt(0));
-    return initials.join(' ').toUpperCase();
-  }
+    return initials.join(" ").toUpperCase();
+  };
 
   render() {
-    return this.state.lost ? <Leaderboard score={this.state.score}/> : (
+    return this.state.lost ? (
+      <LosingScreen score={this.state.score} />
+    ) : (
       <React.Fragment>
-          <GameArea description={this.generateSongInitials(this.state.currentSong)}>
-            <p>{this.state.currentSong.artist}</p>
-          </GameArea>
-          <InputForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} />
-          <GameStatus status={this.state.status} />
+        <GameArea
+          description={this.generateSongInitials(this.state.currentSong)}
+        >
+          <p>{this.state.currentSong.artist}</p>
+        </GameArea>
+        <InputForm
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          value={this.state.value}
+        />
+        <GameStatus status={this.state.status} />
       </React.Fragment>
     );
   }

@@ -6,7 +6,10 @@ dependencies:
   react: 16.8.6
   react-dom: 16.8.6
   react-scripts: 3.0.1
+  store: 2.0.12
   typescript: 3.4.5
+devDependencies:
+  '@types/store': 2.0.2
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -1999,6 +2002,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
+  /@types/store/2.0.2:
+    dev: true
+    resolution:
+      integrity: sha512-ZPHnXkzmGMfk+pHqAGzTSpA9CbsHmJLgkvOl5w52LZ0XTxB1ZIHWZzQ7lEtjTNWScBbsQekg8TjApMXkMe4nkw==
   /@types/unist/2.0.3:
     dev: false
     resolution:
@@ -9725,6 +9732,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
+  /store/2.0.12:
+    dev: false
+    resolution:
+      integrity: sha1-jFNOKguDH3K3X8XxEZhXxE711ZM=
   /stream-browserify/2.0.2:
     dependencies:
       inherits: 2.0.3
@@ -10969,7 +10980,9 @@ specifiers:
   '@types/node': ^12.0.2
   '@types/react': ^16.8.18
   '@types/react-dom': ^16.8.4
+  '@types/store': ^2.0.0
   react: ^16.8.6
   react-dom: ^16.8.6
   react-scripts: ^3.0.1
+  store: ^2.0.12
   typescript: ^3.4.5

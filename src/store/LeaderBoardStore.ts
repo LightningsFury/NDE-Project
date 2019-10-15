@@ -1,5 +1,5 @@
 import { LocalStorageWorker } from "../store/StorageHelper";
-import { User } from "../interfaces/User";
+import { User } from "../interfaces/user";
 
 export class LeaderBoardStore {
   private readonly key: string = "leaderBoard";

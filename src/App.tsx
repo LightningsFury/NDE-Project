@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,Fragment, MouseEvent, MouseEventHandler } from "react";
 import { GameArea } from "./components/GameArea";
 import { InputForm } from "./components/InputForm";
 import "./App.css";
@@ -41,7 +41,8 @@ class App extends Component<{}, AppState> {
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-    if (this.state.value.length <= 0) return this.setState({status: 'Value can\'t be empty!'})
+    if (this.state.value.length <= 0)
+      return this.setState({ status: "Value can't be empty!" });
     const name = this.state.currentSong.name.toLowerCase();
     if (this.state.value.toLowerCase() !== name) {
       if (this.state.secondTry)
@@ -71,11 +72,22 @@ class App extends Component<{}, AppState> {
     return initials.join(" ").toUpperCase();
   };
 
+  private readonly replay: MouseEventHandler<HTMLButtonElement> = (e: MouseEvent<HTMLButtonElement>) => {
+    this.setState({
+      value: "",
+      currentSong: this.getRandomSong(),
+      secondTry: false,
+      status: "You are trying again",
+      lost: false,
+      score: 0
+    })
+  }
+
   render() {
     return this.state.lost ? (
-      <LosingScreen score={this.state.score} />
+      <LosingScreen score={this.state.score} replay={this.replay} />
     ) : (
-      <React.Fragment>
+      <Fragment>
         <GameArea
           description={this.generateSongInitials(this.state.currentSong)}
         >
@@ -87,7 +99,7 @@ class App extends Component<{}, AppState> {
           value={this.state.value}
         />
         <GameStatus status={this.state.status} />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component } from 'react';
 import App from '../App'
 import { authenticate } from '../util/authenticateUser'
 import { UsernameContext } from '../context/username'
@@ -12,6 +12,7 @@ export interface LoginAreaState {
     username: string;
     password: string;
     description: string;
+    outlined: boolean;
 }
 
 export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
@@ -19,8 +20,10 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
         authenticated: false,
         username: '',
         password: '',
-        description: ''
+        description: '',
+        outlined: false
     }
+    private readonly lengthLimit: number = 15;
     constructor(props: LoginAreaProps) {
         super(props)
     }
@@ -44,12 +47,15 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
         }
     public readonly handleUsernameOnChange: React.ChangeEventHandler<HTMLInputElement> = 
         (e: React.ChangeEvent<HTMLInputElement>) => {
+            e.preventDefault()
             this.setState({
-                username: e.target.value
+                username: e.target.value.slice(0, this.lengthLimit),
+                outlined: e.target.value.length >= this.lengthLimit
             })
         }
     public readonly handlePasswordOnChange: React.ChangeEventHandler<HTMLInputElement> = 
         (e: React.ChangeEvent<HTMLInputElement>) => {
+            e.preventDefault()
             this.setState({
                 password: e.target.value
             })
@@ -62,7 +68,11 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                         name={'username'} 
                         onChange={this.handleUsernameOnChange} 
                         value={this.state.username}
+                        style={{
+                            border: this.state.outlined ? '5px solid red' : undefined
+                        }}
                         placeholder={'enter your username'} />
+                        
                     <input 
                         type={'password'} 
                         name={'password'} 

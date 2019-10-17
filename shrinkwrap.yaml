@@ -1,15 +1,13 @@
 dependencies:
+  react: 16.8.6
+  react-dom: 16.8.6
+  react-scripts: 3.0.1
+  typescript: 3.4.5
+devDependencies:
   '@types/jest': 24.0.13
   '@types/node': 12.0.2
   '@types/react': 16.8.18
   '@types/react-dom': 16.8.4
-  react: 16.8.6
-  react-dom: 16.8.6
-  react-scripts: 3.0.1
-  store: 2.0.12
-  typescript: 3.4.5
-devDependencies:
-  '@types/store': 2.0.2
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -1964,21 +1962,20 @@ packages:
     resolution:
       integrity: sha512-UpYjBi8xefVChsCoBpKShdxTllC9pwISirfoZsUa2AAdQg/Jd2KQGtSbw+ya7GPo7x/wAPlH6JBhKhAsXUEZNA==
   /@types/jest-diff/20.0.1:
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
   /@types/jest/24.0.13:
     dependencies:
       '@types/jest-diff': 20.0.1
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-3m6RPnO35r7Dg+uMLj1+xfZaOgIHHHut61djNjzwExXN4/Pm9has9C6I1KMYSfz7mahDhWUOVg4HW/nZdv5Pww==
   /@types/node/12.0.2:
-    dev: false
     resolution:
       integrity: sha512-5tabW/i+9mhrfEOUcLDu2xBPsHJ+X5Orqy9FKpale3SjDA17j5AEpYq5vfy3oAeAHGcvANRCO3NV3d2D6q3NiA==
   /@types/prop-types/15.7.1:
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-CFzn9idOEpHrgdw8JsoTkaDDyRWk1jrzIV8djzcgpq0y9tG4B4lFT+Nxh52DVpDXV+n4+NPNv7M1Dj5uMp6XFg==
   /@types/q/1.5.2:
@@ -1988,24 +1985,20 @@ packages:
   /@types/react-dom/16.8.4:
     dependencies:
       '@types/react': 16.8.18
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-eIRpEW73DCzPIMaNBDP5pPIpK1KXyZwNgfxiVagb5iGiz6da+9A5hslSX6GAQKdO7SayVCS/Fr2kjqprgAvkfA==
   /@types/react/16.8.18:
     dependencies:
       '@types/prop-types': 15.7.1
       csstype: 2.6.4
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-lUXdKzRqWR4FebR5tGHkLCqnvQJS4fdXKCBrNGGbglqZg2gpU+J82pMONevQODUotATs9fc9k66bx3/St8vReg==
   /@types/stack-utils/1.0.1:
     dev: false
     resolution:
       integrity: sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
-  /@types/store/2.0.2:
-    dev: true
-    resolution:
-      integrity: sha512-ZPHnXkzmGMfk+pHqAGzTSpA9CbsHmJLgkvOl5w52LZ0XTxB1ZIHWZzQ7lEtjTNWScBbsQekg8TjApMXkMe4nkw==
   /@types/unist/2.0.3:
     dev: false
     resolution:
@@ -3777,7 +3770,7 @@ packages:
     resolution:
       integrity: sha512-43wY3kl1CVQSvL7wUY1qXkxVGkStjpkDmVjiIKX8R97uhajy8Bybay78uOtqvh7Q5GK75dNPfW0geWjE6qQQow==
   /csstype/2.6.4:
-    dev: false
+    dev: true
     resolution:
       integrity: sha512-lAJUJP3M6HxFXbqtGRc0iZrdyeN+WzOWeY0q/VnFzI+kqVrYIzC7bWlKqCW7oCIdzoPkvfp82EVvrTlQ8zsWQg==
   /cyclist/0.2.2:
@@ -9732,10 +9725,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
-  /store/2.0.12:
-    dev: false
-    resolution:
-      integrity: sha1-jFNOKguDH3K3X8XxEZhXxE711ZM=
   /stream-browserify/2.0.2:
     dependencies:
       inherits: 2.0.3
@@ -10980,9 +10969,7 @@ specifiers:
   '@types/node': ^12.0.2
   '@types/react': ^16.8.18
   '@types/react-dom': ^16.8.4
-  '@types/store': ^2.0.0
   react: ^16.8.6
   react-dom: ^16.8.6
   react-scripts: ^3.0.1
-  store: ^2.0.12
   typescript: ^3.4.5

@@ -1,7 +1,7 @@
 import React, { Component, ContextType, MouseEventHandler } from "react";
-import { HighScoreStore } from "../store/HighScore";
-import { LeaderBoard } from "./LeaderBoard";
-import { UsernameContext } from "../context/username";
+import { HighScoreStore } from "../../store/HighScoreStore";
+import { LeaderBoard } from "./components/LeaderBoard";
+import { UsernameContext } from "../../context/username";
 
 export interface LosingScreenProps {
   score: number;

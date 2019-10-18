@@ -1,4 +1,4 @@
-import {LoginAreaState} from '../components/LoginArea'
+import {LoginAreaState} from '../ui/LoginArea/LoginArea'
 import { users } from '../data/users.json'
 import { encode } from './encryption'
 export const authenticate = (details: LoginAreaState): boolean => {

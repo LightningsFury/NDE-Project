@@ -1,11 +1,10 @@
 import React, { Component,Fragment, MouseEvent, MouseEventHandler } from "react";
-import { GameArea } from "./components/GameArea";
-import { InputForm } from "./components/InputForm";
-import "./App.css";
+import { GameArea } from "./ui/GameArea/GameArea";
+import { InputForm } from "./ui/GameArea/components/InputForm";
 import { songs } from "./data/songs.json";
 import { song } from "./interfaces/song";
-import { GameStatus } from "./components/GameStatus";
-import { LosingScreen } from "./components/LosingScreen";
+import { GameStatus } from "./ui/GameArea/components/GameStatus";
+import { LosingScreen } from "./ui/LosingScreen/LosingScreen";
 
 export interface AppState {
   value: string;

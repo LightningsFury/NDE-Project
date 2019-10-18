@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
-import App from '../App'
-import { authenticate } from '../util/authenticateUser'
-import { UsernameContext } from '../context/username'
+import App from '../../App'
+import { authenticate } from '../../util/authenticateUser'
+import { UsernameContext } from '../../context/username'
 
 export interface LoginAreaProps {
 

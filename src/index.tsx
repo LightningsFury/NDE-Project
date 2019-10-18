@@ -1,20 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import { LoginArea } from "./components/LoginArea";
+import { LoginArea } from "./ui/LoginArea/LoginArea";
 import * as serviceWorker from "./serviceWorker";
+import {BodyStyle} from './styles/BodyStyle';
+import {StyledApp, StyledHeader} from "./styles/AppStyles";
 
 const Main: React.FunctionComponent = () => (
-  <div className="App">
-    <header className="App-header">
+  <StyledApp>
+    <StyledHeader>
       <LoginArea />
-    </header>
-  </div>
+      <BodyStyle />
+    </StyledHeader>
+  </StyledApp>
 );
 
 ReactDOM.render(<Main />, document.getElementById("root"));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();

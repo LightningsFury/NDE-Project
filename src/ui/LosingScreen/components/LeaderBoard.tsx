@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { UsernameContext } from "../context/username";
-import { LeaderBoardStore } from "../store/LeaderBoardStore";
-import { User } from "../interfaces/user";
+import { UsernameContext } from "../../../context/username";
+import { LeaderBoardStore } from "../../../store/LeaderBoardStore";
+import { User } from "../../../interfaces/user";
 
 export interface LeaderBoardProps {
   highScore: number;

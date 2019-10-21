@@ -19,3 +19,9 @@ export const Submit = styled('button')`
     background-color: aliceblue;
     color: black;
 `
+
+export const LoginForm = styled('div')`
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+`

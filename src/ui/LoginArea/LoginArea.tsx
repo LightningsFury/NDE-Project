@@ -2,7 +2,7 @@ import React, {Component } from 'react';
 import App from '../../App'
 import { authenticate } from '../../util/authenticateUser'
 import { UsernameContext } from '../../context/username'
-import {MarginedInput, Submit} from './elements'
+import {MarginedInput, Submit, LoginForm} from './elements'
 
 export interface LoginAreaProps {
 
@@ -62,7 +62,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
             })
         }
     render() {
-        return this.state.authenticated ? <UsernameContext.Provider value={this.state.username}><App /></UsernameContext.Provider> : (<React.Fragment >
+        return this.state.authenticated ? <UsernameContext.Provider value={this.state.username}><App /></UsernameContext.Provider> : (<LoginForm>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label>Username: 
@@ -91,6 +91,6 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                     <div><Submit type={'submit'} >Login</Submit></div>
                 </form> 
                 <p style={{color: 'red'}}>{this.state.description}</p>
-            </React.Fragment>)
+            </LoginForm>)
     }
 }

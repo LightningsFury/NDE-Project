@@ -54,6 +54,7 @@ class App extends Component<{}, AppState> {
         status: "Incorrect! Try Again..."
       });
       return;
+      
     } else {
       this.setState({
         value: "",

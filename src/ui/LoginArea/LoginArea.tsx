@@ -63,23 +63,29 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
     render() {
         return this.state.authenticated ? <UsernameContext.Provider value={this.state.username}><App /></UsernameContext.Provider> : (<React.Fragment >
                 <form onSubmit={this.handleSubmit}>
-                    <input 
-                        type={'text'} 
-                        name={'username'} 
-                        onChange={this.handleUsernameOnChange} 
-                        value={this.state.username}
-                        style={{
-                            border: this.state.outlined ? '5px solid red' : undefined
-                        }}
-                        placeholder={'enter your username'} />
-                        
-                    <input 
-                        type={'password'} 
-                        name={'password'} 
-                        onChange={this.handlePasswordOnChange}
-                        value={this.state.password}
-                        placeholder={'password'} />
-                    <input type={'submit'} />
+                    <div>
+                        <label for={'username'}>Username: </label>
+                        <input 
+                            type={'text'} 
+                            name={'username'} 
+                            onChange={this.handleUsernameOnChange} 
+                            value={this.state.username}
+                            style={{
+                                border: this.state.outlined ? '5px solid red' : undefined
+                            }}
+                            placeholder={'enter your username'} />
+                    </div>  
+                    <div>
+                    <label for={'password'}>Password: </label>
+                        <input 
+                            type={'password'} 
+                            name={'password'} 
+                            onChange={this.handlePasswordOnChange}
+                            value={this.state.password}
+                            placeholder={'password'} />
+                    </div>
+                    
+                    <div><input type={'submit'} /></div>
                 </form> 
                 <p style={{color: 'red'}}>{this.state.description}</p>
             </React.Fragment>)

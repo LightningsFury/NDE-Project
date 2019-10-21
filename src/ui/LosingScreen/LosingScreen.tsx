@@ -2,7 +2,7 @@ import React, { Component, ContextType, MouseEventHandler } from "react";
 import { HighScoreStore } from "../../store/HighScoreStore";
 import { LeaderBoard } from "./components/LeaderBoard";
 import { UsernameContext } from "../../context/username";
-import { YouLost, Score, HighScore} from './elements'
+import { YouLost, Score, HighScore, ReplayButton} from './elements'
 
 export interface LosingScreenProps {
   score: number;
@@ -27,7 +27,7 @@ export class LosingScreen extends Component<
   render() {
     return (
       <div>
-        <button onClick={this.props.replay}>Replay</button>
+        <ReplayButton onClick={this.props.replay}>Replay</ReplayButton>
         <YouLost>You lost!</YouLost>
         <Score>Your score: {this.props.score}</Score>
         <HighScore>Your high score: {this.highScore}</HighScore>

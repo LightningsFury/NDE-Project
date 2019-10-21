@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { UsernameContext } from "../../../context/username";
 import { LeaderBoardStore } from "../../../store/LeaderBoardStore";
 import { User } from "../../../interfaces/user";
-import { Position } from '../elements'
+import { Position, LeaderBoardBox } from '../elements'
 
 export interface LeaderBoardProps {
   highScore: number;
@@ -47,7 +47,7 @@ export class LeaderBoard extends Component<LeaderBoardProps, LeaderBoardState> {
   }
   render() {
     return (
-      <div>
+      <LeaderBoardBox>
         <h3>Leaderboard</h3>
         <UsernameContext.Consumer>
           {(username: string | undefined) => {
@@ -67,7 +67,7 @@ export class LeaderBoard extends Component<LeaderBoardProps, LeaderBoardState> {
             );
           }}
         </UsernameContext.Consumer>
-      </div>
+      </LeaderBoardBox>
     );
   }
 }

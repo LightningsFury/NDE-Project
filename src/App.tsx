@@ -26,9 +26,7 @@ class App extends Component<{}, AppState> {
     const randomSongIndex = Math.floor(len * Math.random())
     if (this.songs.length <= 0) this.songs = songs;
     const picked = this.songs[randomSongIndex]
-    console.log(picked)
     this.songs.splice(randomSongIndex, 1)
-    console.log(this.songs)
     return picked;
   };
   public state: AppState = {

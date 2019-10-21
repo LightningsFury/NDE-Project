@@ -3,7 +3,17 @@ import styled from '@emotion/styled';
 export const MarginedInput = styled('input')`
     margin-left: 10px;
     background-color: lightblue;
-    & :focus {
-        background-color: cyan;
+    padding: 3px;
+    border: none;
+    &:focus {
+        background-color: green;
     }
+`
+
+export const Submit = styled('button')`
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: aliceblue;
+    color: black;
 `

@@ -2,7 +2,7 @@ import React, {Component } from 'react';
 import App from '../../App'
 import { authenticate } from '../../util/authenticateUser'
 import { UsernameContext } from '../../context/username'
-import {MarginedInput} from './elements'
+import {MarginedInput, Submit} from './elements'
 
 export interface LoginAreaProps {
 
@@ -88,7 +88,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                         </label>
                     </div>
                     
-                    <div><input type={'submit'} /></div>
+                    <div><Submit type={'submit'} /></div>
                 </form> 
                 <p style={{color: 'red'}}>{this.state.description}</p>
             </React.Fragment>)

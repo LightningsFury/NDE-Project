@@ -64,25 +64,27 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
         return this.state.authenticated ? <UsernameContext.Provider value={this.state.username}><App /></UsernameContext.Provider> : (<React.Fragment >
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label for={'username'}>Username: </label>
-                        <input 
-                            type={'text'} 
-                            name={'username'} 
-                            onChange={this.handleUsernameOnChange} 
-                            value={this.state.username}
-                            style={{
-                                border: this.state.outlined ? '5px solid red' : undefined
-                            }}
-                            placeholder={'enter your username'} />
+                        <label>Username: 
+                            <input 
+                                type={'text'} 
+                                name={'username'} 
+                                onChange={this.handleUsernameOnChange} 
+                                value={this.state.username}
+                                style={{
+                                    border: this.state.outlined ? '5px solid red' : undefined
+                                }}
+                                placeholder={'enter your username'} />
+                        </label>
                     </div>  
                     <div>
-                    <label for={'password'}>Password: </label>
-                        <input 
-                            type={'password'} 
-                            name={'password'} 
-                            onChange={this.handlePasswordOnChange}
-                            value={this.state.password}
-                            placeholder={'password'} />
+                        <label>Password: 
+                            <input 
+                                type={'password'} 
+                                name={'password'} 
+                                onChange={this.handlePasswordOnChange}
+                                value={this.state.password}
+                                placeholder={'password'} />
+                        </label>
                     </div>
                     
                     <div><input type={'submit'} /></div>

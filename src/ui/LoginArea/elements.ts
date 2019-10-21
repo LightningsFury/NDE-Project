@@ -1,14 +1,12 @@
 import styled from '@emotion/styled';
 
-interface InputProps {
-    outlined: boolean;
-}
 
-export const MarginedInput = styled('input')<InputProps>`
+
+export const MarginedInput = styled('input')`
     margin-left: 10px;
     background-color: lightblue;
     padding: 3px;
-    border: ${({outlined: InputProps}) => outlined ? '5px solid red' : 'none'};
+    border: none;
     &:focus {
         background-color: cyan;
         border: none;

@@ -71,7 +71,9 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                                 name={'username'} 
                                 onChange={this.handleUsernameOnChange} 
                                 value={this.state.username}
-                                outlined={this.state.outlined}
+                                style={{
+                                    border: this.state.outlined ? '5px solid red' : undefined
+                                }}
                                 placeholder={'enter your username'} />
                         </label>
                     </div>  

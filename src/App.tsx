@@ -27,7 +27,7 @@ class App extends Component<{}, AppState> {
     if (this.songs.length <= 0) this.songs = songs;
     const picked = this.songs[randomSongIndex]
     console.log(picked)
-    this.songs = this.songs.splice(randomSongIndex, 1)
+    this.songs.splice(randomSongIndex, 1)
     console.log(this.songs)
     return picked;
   };

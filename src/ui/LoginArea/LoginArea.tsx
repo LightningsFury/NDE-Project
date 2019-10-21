@@ -2,6 +2,7 @@ import React, {Component } from 'react';
 import App from '../../App'
 import { authenticate } from '../../util/authenticateUser'
 import { UsernameContext } from '../../context/username'
+import {MarginedInput} from './elements'
 
 export interface LoginAreaProps {
 
@@ -65,7 +66,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label>Username: 
-                            <input 
+                            <MarginedInput 
                                 type={'text'} 
                                 name={'username'} 
                                 onChange={this.handleUsernameOnChange} 
@@ -78,7 +79,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                     </div>  
                     <div>
                         <label>Password: 
-                            <input 
+                            <MarginedInput 
                                 type={'password'} 
                                 name={'password'} 
                                 onChange={this.handlePasswordOnChange}

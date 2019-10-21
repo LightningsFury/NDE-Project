@@ -2,6 +2,9 @@ import { Global, css } from '@emotion/core';
 import React, {FunctionComponent} from 'react';
 
 export const BodyStyle: FunctionComponent = () => <Global styles={css`
+    * {
+        box-sizing: border-box;
+    }
     body {
         margin: 0;
         padding: 0;

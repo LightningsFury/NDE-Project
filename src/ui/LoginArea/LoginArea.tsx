@@ -71,9 +71,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                                 name={'username'} 
                                 onChange={this.handleUsernameOnChange} 
                                 value={this.state.username}
-                                style={{
-                                    border: this.state.outlined ? '5px solid red' : undefined
-                                }}
+                                outlined={this.state.outlined}
                                 placeholder={'enter your username'} />
                         </label>
                     </div>  
@@ -88,7 +86,7 @@ export class LoginArea extends Component<LoginAreaProps, LoginAreaState> {
                         </label>
                     </div>
                     
-                    <div><Submit type={'submit'} /></div>
+                    <div><Submit type={'submit'} >Login</Submit></div>
                 </form> 
                 <p style={{color: 'red'}}>{this.state.description}</p>
             </React.Fragment>)

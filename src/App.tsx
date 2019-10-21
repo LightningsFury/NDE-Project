@@ -20,9 +20,13 @@ class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
   }
+  private songs: songs[] = [...songs];
   private getRandomSong = (): song => {
     const len: number = songs.length;
-    return songs[Math.floor(len * Math.random())];
+    const randomSongIndex = Math.floor(len * Math.random())
+    const picked = this.songs[randomSongIndex]
+    this.songs = this.songs.splice(randomSongIndex, 1)
+    return picked;
   };
   public state: AppState = {
     value: "",
@@ -30,7 +34,8 @@ class App extends Component<{}, AppState> {
     secondTry: false,
     status: "",
     lost: false,
-    score: 0
+    score: 0,
+
   };
   public readonly handleChange: React.ChangeEventHandler<HTMLInputElement> = (
     e: React.ChangeEvent<HTMLInputElement>

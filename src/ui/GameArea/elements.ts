@@ -15,3 +15,11 @@ export const Input = styled('input')`
         border: none;
     }
 `
+
+export const Submit = styled('input')`
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: aliceblue;
+    color: black;
+`

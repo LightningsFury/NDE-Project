@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Input, Submit} from '../elements'
 
 export interface InputFormProps {
     handleSubmit: React.FormEventHandler<HTMLFormElement>;
@@ -13,8 +14,8 @@ export class InputForm extends Component<InputFormProps, InputFormState> {
     render() {
         return (<div>
             <form onSubmit={this.props.handleSubmit}>
-                <input type={'text'} onChange={this.props.handleChange} value={this.props.value} ref={input => input && input.focus()} />
-                <input type={'submit'} />
+                <Input type={'text'} onChange={this.props.handleChange} value={this.props.value} ref={input => input && input.focus()} />
+                <Submit type={'submit'} />
             </form>
         </div>)
     }

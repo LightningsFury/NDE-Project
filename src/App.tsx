@@ -20,9 +20,9 @@ class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
   }
-  private songs: songs[] = [...songs];
+  private songs: song[] = [...songs];
   private getRandomSong = (): song => {
-    const len: number = songs.length;
+    const len: number = this.songs.length;
     const randomSongIndex = Math.floor(len * Math.random())
     if (this.songs.length <= 0) this.songs = songs;
     const picked = this.songs[randomSongIndex]

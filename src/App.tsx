@@ -5,6 +5,7 @@ import { songs } from "./data/songs.json";
 import { song } from "./interfaces/song";
 import { GameStatus } from "./ui/GameArea/components/GameStatus";
 import { LosingScreen } from "./ui/LosingScreen/LosingScreen";
+import { Artist } from './ui/GameArea/elements'
 
 export interface AppState {
   value: string;
@@ -91,7 +92,7 @@ class App extends Component<{}, AppState> {
         <GameArea
           description={this.generateSongInitials(this.state.currentSong)}
         >
-          <p>{this.state.currentSong.artist}</p>
+          <Artist>{this.state.currentSong.artist}</Artist>
         </GameArea>
         <InputForm
           handleSubmit={this.handleSubmit}

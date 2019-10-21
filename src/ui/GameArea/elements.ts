@@ -22,4 +22,10 @@ export const Submit = styled('input')`
     padding: 5px;
     background-color: aliceblue;
     color: black;
+    margin-left: 5px;
+`
+
+export const Artist = styled('p')`
+    color: mediumpurple;
+    font-family: monospace;
 `

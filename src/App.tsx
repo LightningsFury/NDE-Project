@@ -24,8 +24,11 @@ class App extends Component<{}, AppState> {
   private getRandomSong = (): song => {
     const len: number = songs.length;
     const randomSongIndex = Math.floor(len * Math.random())
+    if (this.songs.length <= 0) this.songs = songs;
     const picked = this.songs[randomSongIndex]
+    console.log(picked)
     this.songs = this.songs.splice(randomSongIndex, 1)
+    console.log(this.songs)
     return picked;
   };
   public state: AppState = {

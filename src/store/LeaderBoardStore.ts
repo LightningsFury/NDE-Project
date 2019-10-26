@@ -1,16 +1,17 @@
 import { LocalStorageWorker } from "../store/StorageHelper";
 import { User } from "../interfaces/user";
 
-export class LeaderBoardStore {
+// the store for the array of users which is used for the leader board.
+export class LeaderBoardStore extends LocalStorageWorker {
   private readonly key: string = "leaderBoard";
-  private store: LocalStorageWorker;
   constructor(private readonly currentUser: User) {
-    this.store = new LocalStorageWorker();
+    super()
   }
+  // if the user is not already of the leader board, put them in
   public readonly register = () => {
     this.defaultStore();
     const currentLeaderBoard: User[] = JSON.parse(
-      this.store.get(this.key) || "[]"
+      this.get(this.key) || "[]"
     );
     const isUserExistant = LeaderBoardStore.getUserIndex(
       currentLeaderBoard,
@@ -20,7 +21,7 @@ export class LeaderBoardStore {
       const index = isUserExistant;
       currentLeaderBoard[index] = this.currentUser;
     } else currentLeaderBoard.push(this.currentUser);
-    return this.store.add(this.key, JSON.stringify(currentLeaderBoard));
+    return this.add(this.key, JSON.stringify(currentLeaderBoard));
   };
   // if the user already exists in the leaderboards, return the index where it exists; else return false;
   private static getUserIndex(lb: User[], currentUser: User): number | boolean {
@@ -33,9 +34,10 @@ export class LeaderBoardStore {
     });
     return index;
   }
+  // the value in the database is a string, so it is turned into an array by parsing it
   public readonly getUsers = (): User[] =>
-    JSON.parse(this.store.get(this.key) as string);
+    JSON.parse(this.get(this.key) as string);
   private readonly defaultStore = () => {
-    if (!this.store.get(this.key)) this.store.add(this.key, JSON.stringify([]));
+    if (!this.get(this.key)) this.add(this.key, JSON.stringify([]));
   };
 }

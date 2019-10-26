@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+// The css code to center everything on the webpage
+
 export const StyledApp = styled('div')`
     text-align: center;
 `;

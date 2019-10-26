@@ -1,6 +1,8 @@
 import { Global, css } from '@emotion/core';
 import React, {FunctionComponent} from 'react';
 
+// Global css styles for the entire application
+
 export const BodyStyle: FunctionComponent = () => <Global styles={css`
     * {
         box-sizing: border-box;

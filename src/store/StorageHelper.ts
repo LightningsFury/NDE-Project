@@ -14,11 +14,12 @@ export class StorageItem {
     }
 }
 
-// class for working with local storage in browser (common that can use other classes for store some data)
+// class for working with local storage in browser 
 export class LocalStorageWorker {
     localStorageSupported: boolean;
 
     constructor() {
+        // makes sure the browser supports local storage 
         this.localStorageSupported = typeof window['localStorage'] != "undefined" && window['localStorage'] != null;
     }
 

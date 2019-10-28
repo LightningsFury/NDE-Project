@@ -71,8 +71,8 @@ class App extends Component<{}, AppState> {
       this.setState({
         value: "",
         status:
-          "Correct! Next Try... \n Your score is " + (this.state.score + 1),
-        score: this.state.score + 1,
+          "Correct! Next Try... \n Your score is " + (this.state.score + (this.state.secondTry ? 1 : 3)),
+        score: this.state.score + (this.state.secondTry ? 1 : 3),
         secondTry: false, // reset the value back to false, whether or not it was true before
         currentSong: this.getRandomSong()
       });

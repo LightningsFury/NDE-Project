@@ -37,7 +37,7 @@ class App extends Component<{}, AppState> {
     currentSong: this.getRandomSong(),
     secondTry: false,
     status: "",
-    lost: false,
+    lost: 'no',
     score: 0,
 
   };
